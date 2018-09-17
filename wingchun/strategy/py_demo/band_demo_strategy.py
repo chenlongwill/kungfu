@@ -95,6 +95,7 @@ on market data,
     all market data from the source will be received. 
 '''
 def on_tick(context, md, source, rcv_time):
+    print(">>>")
     if M_TICKER == md.InstrumentID and context.td_connected:
         context.signal.TickPrice.append(md.LastPrice)
         context.md_num += 1
